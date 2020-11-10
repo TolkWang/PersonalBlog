@@ -46,3 +46,31 @@
 
 实例化所有的非懒加载的bean对象
 
+##### FactoryBean的三个方法
+
+isSingleton
+
+getObject
+
+getObjectType
+
+##### Spring Bean的生命周期
+
+1 spring容器跟据配置中的bean定义实例化bean
+
+2 spring使用依赖注入填充所有属性，如bean中所定义的配置
+
+3 如果bean实现了BeanNameAware接口，则工厂通过传递ID来调用setBeanName()
+
+4 如果bean实现了BeanFactoryAware接口，则工厂通过传递自身的实例来调用setBeanFactory()
+
+5 如果存在于Bean关联的任何BeanPostProcessors,则调用preProcessBeforeInitization方法
+
+6 如果Bean指定了init方法的(init-Method)属性，将调用它
+
+7 如果存在于bean关联的任何BeanPostProcessors.则调用postProcessAfterInitization()方法
+
+8 如果bean实现了DisposeableBean接口，当spring容器关闭时，调用destory()
+
+9 如果bean指定了destory方法(destory-method),将调用它
+

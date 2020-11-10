@@ -68,6 +68,20 @@
 
 2.变量不需要与其他的状态变量共同参与不变约束
 
+## 5.类的加载顺序
+
+BootStrap ClassLoader
+
+Extension ClassLoader
+
+Application ClassLoader
+
+## 6.双亲委派机制
+
+类加载器会向上委托父类加载器，若成功完成类加载任务，则成功返回，避免了类的重复加载，保护核心API
+
+
+
 
 
 
